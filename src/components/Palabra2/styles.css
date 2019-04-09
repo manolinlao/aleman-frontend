@@ -1,0 +1,27 @@
+.resultado{
+    color: #17252a;       
+}
+
+.palabrita{
+    background: #3aafa9;
+    border:1px solid #17252a;
+    margin: 10px;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.textoPalabra{
+    
+    color: #17252a;
+}
+
+.botonInfo{
+    background-color: #f8e9a1;
+    border:0px;
+    color: #17252a;
+    padding:5px;
+    width:110px;
+    margin-right: 10px;
+    font-size:11px;
+    margin-top: 10px;
+}

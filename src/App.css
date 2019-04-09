@@ -1,0 +1,49 @@
+body {
+  font-family:'roboto';
+  font-size:14px;
+  padding: 0px;
+  margin: 0;
+  background-color: #2b7a78;
+  color: #17252a;
+}
+
+.active {
+  background-color: #3aafa9;
+}
+
+.cabecera{
+  background-color: #25274d;
+  background-color: #17252a;
+  height:20px;
+  color: #def2f1;
+  padding: 15px;
+  font-size: 20px;
+}
+.menu{
+  background-color: #464866;
+  background-color: #2b7a78;
+  height:27px;
+  color: #def2f1;
+  width: 90%;
+  padding-left: 5px;
+  overflow: auto;
+}
+
+.menuCol{
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.menu a{
+  color: #feffff;
+  text-decoration: none;
+}
+
+.contenido{
+  background-color: #3aafa9;
+  overflow: auto;
+  height: 80vh;
+}

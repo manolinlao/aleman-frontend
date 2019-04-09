@@ -1,0 +1,107 @@
+
+.login {
+    margin:20px;
+    background-color: #def2f1;
+    width:325px;
+    border:1px solid #2b7a78;
+    border-radius: 10px;
+    padding:15px;
+    padding-bottom: 30px;
+}
+
+.busca {
+    margin:20px;
+    background-color: #def2f1;
+    width:325px;
+    border:1px solid #2b7a78;
+    border-radius: 10px;
+    padding:15px;
+    padding-bottom: 30px;
+}
+
+.post {
+    margin:20px;
+    background-color: #def2f1;
+    width:325px;
+    border:1px solid #2b7a78;
+    border-radius: 10px;
+    padding:15px;
+    padding-bottom: 30px;
+}
+
+.consulta {
+    margin:20px;
+}
+
+.user {
+    color: #2b7a78;
+}
+
+.fila{
+    display: table;
+}
+
+.columna1{
+    display: table-cell;
+    
+    font-weight: bold;
+}
+.columna2{
+    display: table-cell;  
+    padding-left: 5px;
+}
+.columna3{
+    display: table-cell;  
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.boton{
+   margin-right: 10px;
+}
+
+
+.espera {
+    width:350px;
+    margin-top: 20px;   
+    text-align: center;
+}
+
+.botonein{
+    background-color: #f8e9a1;
+    border:0px;
+    color: #17252a;
+    padding:5px;
+    width:80px;
+    margin-right: 10px;
+}
+
+.botonaus{
+    background-color: #f76c6c;
+    border:0px;
+    color: #17252a;
+    padding:5px;
+    width:80px;
+    margin-right: 10px;
+}
+
+.botones{
+    margin-top:20px;
+    text-align:center;
+}
+
+.details{
+    font-weight: bold;
+}
+
+.bolderiza{
+    font-weight: bold;
+}
+
+.resultadoGrabacion{
+    border:1px solid black; 
+    margin-top: 20px;
+    padding:10px;
+    text-align: center;
+    border-radius: 10px;
+}
