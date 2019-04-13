@@ -43,7 +43,7 @@ class Busca extends Component {
         
         let idioma = this.idiomaElegido;
         console.log("BUSCAAAAA:::"+idioma);
-        if(palabraABuscar != '' ) {
+        if(palabraABuscar !== '' ) {
             this.buscaPalabra(palabraABuscar,idioma);
         }
         this.nameInput.focus();
@@ -58,9 +58,11 @@ class Busca extends Component {
             strApiAle = api_consulta_ale;
             strApiCas = api_consulta_cas;
         } 
+
+        console.log("MLAO::strApiAle=" + strApiAle);
         
         let urlBusqueda = strApiAle+palabra;
-        if(idioma=="cas"){
+        if(idioma==="cas"){
             urlBusqueda = strApiCas+palabra;
         }
 
@@ -80,7 +82,7 @@ class Busca extends Component {
         console.log("BUSQUEDA");
         console.log(palabras);
         
-        if(palabras.length==0){
+        if(palabras.length===0){
             palabras = null;
         }else{
             

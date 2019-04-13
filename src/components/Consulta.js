@@ -90,7 +90,7 @@ class Consulta extends Component {
       urlApi = api_consulta_conjugaciones;
     }
 
-    await fetch(api_consulta_conjugaciones,{mode:'cors'}).then( response => {
+    await fetch(urlApi,{mode:'cors'}).then( response => {
       console.log("hay respuesta");
       return response.json();
     }).then(data=>{  
