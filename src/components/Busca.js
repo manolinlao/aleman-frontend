@@ -54,6 +54,9 @@ class Busca extends Component {
 
         let strApiAle = api_consulta_ale_Produccion;
         let strApiCas = api_consulta_cas_Produccion;
+
+        console.log("MLAO::PROCESS=" + process.env.NODE_ENV);
+
         if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
             strApiAle = api_consulta_ale;
             strApiCas = api_consulta_cas;
