@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {api_consulta_verbo } from './../../constants/api_url';
+import {api_consulta_verbo_Produccion } from './../../constants/api_url';
 import './styles.css';
 import swal from 'sweetalert';
  
@@ -92,7 +93,15 @@ class Palabra2 extends Component {
 
   async getVerboInfo(palabra){
     let result = null;
-    let urlBusqueda = api_consulta_verbo+palabra;
+    
+    let strApi = api_consulta_verbo_Produccion;
+    if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
+        strApi = api_consulta_verbo;
+    } 
+
+
+
+    let urlBusqueda = strApi+palabra;
     let verbos = null;
     await fetch(urlBusqueda,{mode:'cors'}).then( response => {
       return response.json();

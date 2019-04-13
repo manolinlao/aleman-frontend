@@ -5,6 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import {transformDataConsulta,transformConjugaciones,procesaPalabras} from '../services/api_consultas';
 import {api_consulta_all, api_consulta_conjugaciones } from './../constants/api_url';
+import {api_consulta_all_Produccion, api_consulta_conjugaciones_Produccion } from './../constants/api_url';
 
 import './styles.css';
 
@@ -60,7 +61,13 @@ class Consulta extends Component {
     let hayConjugaciones = false;
 
     //Cargamos las palabras
-    await fetch(api_consulta_all,{mode:'cors'}).then( response => {
+
+    let urlApi = api_consulta_all_Produccion;
+    if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
+      urlApi = api_consulta_all;
+    }
+
+    await fetch(urlApi,{mode:'cors'}).then( response => {
       return response.json();
     }).then(data=>{
       const newPalabrasRecibidas = transformDataConsulta(data);
@@ -77,6 +84,12 @@ class Consulta extends Component {
     //Cargamos las conjugaciones
     console.log("hacemos fetch de las conjugaciones verbales");
     console.log("consulta.js::componentDidMount::api_consulta_conjugaciones = " + api_consulta_conjugaciones);
+
+     urlApi = api_consulta_conjugaciones_Produccion;
+    if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
+      urlApi = api_consulta_conjugaciones;
+    }
+
     await fetch(api_consulta_conjugaciones,{mode:'cors'}).then( response => {
       console.log("hay respuesta");
       return response.json();

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {api_login } from './../constants/api_url';
+import {api_login, api_login_Produccion } from './../constants/api_url';
 import swal from 'sweetalert';
 import './styles.css';
  
@@ -51,7 +51,14 @@ class Login extends Component {
         mode:'cors',
         body: strDataBody
       }
-      fetch(api_login,fetchOptions).then( response => {
+
+      let urlApi = api_login_Produccion;
+      if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
+        urlApi = api_login;
+      }
+
+
+      fetch(urlApi,fetchOptions).then( response => {
         return response.json();
       }).then(data=>{
         console.log("RESULTADO LOGIN");
@@ -105,7 +112,7 @@ class Login extends Component {
           müssen Sie sich als Admin-Benutzer anmelden.
           <br></br>
           </h4>
-          <h5>Zum Beispiel: manolinlao@gmail.com - meloncio25</h5>
+          <h5>Zum Beispiel: manolinlao@gmail.com - 12345678</h5>
         
         </div>
         

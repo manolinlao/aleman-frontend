@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {transformDataConsultaPalabra} from '../services/api_consultas';
 import {api_consulta_ale,api_consulta_cas } from './../constants/api_url';
+import {api_consulta_ale_Produccion,api_consulta_cas_Produccion} from './../constants/api_url';
 import Palabra2 from './Palabra2';
 
  
@@ -9,6 +10,8 @@ class Busca extends Component {
     constructor(props){
         super(props);
         
+
+      
         this.state = {
             palabrasEncontradas: null,
             valorFormulario:'',
@@ -47,10 +50,18 @@ class Busca extends Component {
     }
 
     async buscaPalabra(palabra,idioma){
+
+
+        let strApiAle = api_consulta_ale_Produccion;
+        let strApiCas = api_consulta_cas_Produccion;
+        if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
+            strApiAle = api_consulta_ale;
+            strApiCas = api_consulta_cas;
+        } 
         
-        let urlBusqueda = api_consulta_ale+palabra;
+        let urlBusqueda = strApiAle+palabra;
         if(idioma=="cas"){
-            urlBusqueda = api_consulta_cas+palabra;
+            urlBusqueda = strApiCas+palabra;
         }
 
         let palabras = null;
