@@ -170,14 +170,11 @@ const getApi = (nombre) => {
     
     let tipo  = "pro";
     let location = window.location.href+"";
-    if(location.indexOf("localhost")){
+    console.log("LOCATION="+location);
+    if(location.indexOf("localhost")!==-1){
         tipo = "dev";
     }
 
-
-    
-
-    
 
     if(tipo==="pro"){
         urlApi = urlPro;
