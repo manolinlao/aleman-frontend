@@ -163,14 +163,21 @@ const transformDataConsultaPalabra = (data) =>{
 }
 
 
-const getApi = (nombre,tipo) => {
+const getApi = (nombre) => {
     let urlDev = "http://localhost:3001/";
     let urlPro = "https://aleman-backend.herokuapp.com/";
     let urlApi = "";
     
-    tipo = "pro";
+    let tipo  = "pro";
+    let location = window.location.href+"";
+    if(location.indexOf("localhost")){
+        tipo = "dev";
+    }
 
-    console.log(process.env.NODE_ENV);
+
+    
+
+    
 
     if(tipo==="pro"){
         urlApi = urlPro;

@@ -93,7 +93,7 @@ class Post extends Component {
 
 
 
-      let urlApi = getApi("grabapalabra","dev");
+      let urlApi = getApi("grabapalabra");
 
       fetch(urlApi,fetchOptions).then( response => {
         console.log("RESPONMSE");

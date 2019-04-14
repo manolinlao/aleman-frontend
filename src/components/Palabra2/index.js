@@ -93,7 +93,7 @@ class Palabra2 extends Component {
   async getVerboInfo(palabra){
     let result = null;
     
-    let strApi = getApi("verbo","dev");
+    let strApi = getApi("verbo");
 
     let urlBusqueda = strApi + "/" + palabra;
     let verbos = null;

@@ -49,8 +49,6 @@ class Busca extends Component {
 
     async buscaPalabra(palabra,idioma){
 
-
-    
         
         let urlBusqueda = getApi("palabraale","dev") + "/" + palabra;
         if(idioma==="cas"){

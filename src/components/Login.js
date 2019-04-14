@@ -52,7 +52,7 @@ class Login extends Component {
         body: strDataBody
       }
 
-      let urlApi = getApi("login","dev");
+      let urlApi = getApi("login");
   
       fetch(urlApi,fetchOptions).then( response => {
         return response.json();

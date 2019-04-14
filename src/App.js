@@ -12,6 +12,8 @@ import Post from './components/Post';
 
 import './App.css';
 
+
+
 //hemos de definir la "región de routing" dentro del render del componente
 //The creators of React Router have already thought:
 // When you click on a link, a class value of active is automatically assigned to it.
@@ -39,6 +41,7 @@ import './App.css';
 class App extends Component {
   render() {
     return(
+      
       <BrowserRouter>
         <div className="todo">
           <div className="cabecera">
@@ -60,6 +63,7 @@ class App extends Component {
           </div>
         </div>
       </BrowserRouter>
+      
     );
   }
 }

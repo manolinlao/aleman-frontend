@@ -62,7 +62,7 @@ class Consulta extends Component {
 
     //Cargamos las palabras
 
-    let urlApi = getApi('all',"dev");
+    let urlApi = getApi('all');
 
     await fetch(urlApi,{mode:'cors'}).then( response => {
       return response.json();
@@ -82,7 +82,7 @@ class Consulta extends Component {
     console.log("hacemos fetch de las conjugaciones verbales");
     
 
-    urlApi = getApi('conjugaciones',"dev");
+    urlApi = getApi('conjugaciones');
 
     await fetch(urlApi,{mode:'cors'}).then( response => {
       console.log("hay respuesta");
