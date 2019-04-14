@@ -3,9 +3,9 @@ import Palabra from './Palabra';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import {transformDataConsulta,transformConjugaciones,procesaPalabras} from '../services/api_consultas';
-import {api_consulta_all, api_consulta_conjugaciones } from './../constants/api_url';
-import {api_consulta_all_Produccion, api_consulta_conjugaciones_Produccion } from './../constants/api_url';
+import {transformDataConsulta,transformConjugaciones,procesaPalabras,getApi} from '../services/api_consultas';
+
+
 
 import './styles.css';
 
@@ -22,7 +22,7 @@ class Consulta extends Component {
   }
 
   async componentDidMount(){
-    console.log("consulta.js::componentDidMount::api_consulta_all = " + api_consulta_all);
+   
 
     //Cuando hago la prueba en mi propio dominio, es decir ejecuto esto desde el port 3000 
     //y el fectch es en el mismo localhost pero otro puerto, he de activar las CORS tanto
@@ -62,10 +62,7 @@ class Consulta extends Component {
 
     //Cargamos las palabras
 
-    let urlApi = api_consulta_all_Produccion;
-    if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
-      urlApi = api_consulta_all;
-    }
+    let urlApi = getApi('all',"dev");
 
     await fetch(urlApi,{mode:'cors'}).then( response => {
       return response.json();
@@ -83,12 +80,9 @@ class Consulta extends Component {
 
     //Cargamos las conjugaciones
     console.log("hacemos fetch de las conjugaciones verbales");
-    console.log("consulta.js::componentDidMount::api_consulta_conjugaciones = " + api_consulta_conjugaciones);
+    
 
-     urlApi = api_consulta_conjugaciones_Produccion;
-    if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
-      urlApi = api_consulta_conjugaciones;
-    }
+    urlApi = getApi('conjugaciones',"dev");
 
     await fetch(urlApi,{mode:'cors'}).then( response => {
       console.log("hay respuesta");

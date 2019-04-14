@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {api_graba_palabra, api_graba_palabra_Produccion } from './../constants/api_url';
+import {getApi} from '../services/api_consultas';
 
 
 
@@ -92,10 +92,8 @@ class Post extends Component {
       }
 
 
-      let urlApi = api_graba_palabra_Produccion;
-      if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
-        urlApi = api_graba_palabra;
-      }
+
+      let urlApi = getApi("grabapalabra","dev");
 
       fetch(urlApi,fetchOptions).then( response => {
         console.log("RESPONMSE");

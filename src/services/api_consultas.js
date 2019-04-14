@@ -162,11 +162,57 @@ const transformDataConsultaPalabra = (data) =>{
     return result;
 }
 
+
+const getApi = (nombre,tipo) => {
+    let urlDev = "http://localhost:3001/";
+    let urlPro = "https://aleman-backend.herokuapp.com/";
+    let urlApi = "";
+    
+    tipo = "pro";
+
+    console.log(process.env.NODE_ENV);
+
+    if(tipo==="pro"){
+        urlApi = urlPro;
+    }else{
+        urlApi = urlDev;
+    }
+
+    let nombreApi = "";
+
+    if(nombre==="all"){
+        nombreApi  = "getallpalabras";
+    }
+    if(nombre==="conjugaciones"){
+        nombreApi = "getconjugaciones";
+    }
+    if(nombre==="grabapalabra"){
+        nombreApi = "palabra";
+    }
+    if(nombre==="login"){
+        nombreApi = "login";
+    }
+    if(nombre==="palabraale"){
+        nombreApi = "getPalabraAle";
+    }
+    if(nombre==="palabracas"){
+        nombreApi = "getPalabraCas";
+    }
+    if(nombre==="verbo"){
+        nombreApi = "getVerboAle";
+    }
+
+    urlApi = urlApi + nombreApi;
+    return urlApi;
+}
+
+
 module.exports = {
     transformDataConsulta,
     transformConjugaciones,
     procesaPalabras,
     transformDataConsultaPalabra,
+    getApi
 }
 
 

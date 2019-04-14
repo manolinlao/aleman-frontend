@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {api_login, api_login_Produccion } from './../constants/api_url';
+import {getApi} from '../services/api_consultas';
 import swal from 'sweetalert';
 import './styles.css';
  
@@ -52,12 +52,8 @@ class Login extends Component {
         body: strDataBody
       }
 
-      let urlApi = api_login_Produccion;
-      if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
-        urlApi = api_login;
-      }
-
-
+      let urlApi = getApi("login","dev");
+  
       fetch(urlApi,fetchOptions).then( response => {
         return response.json();
       }).then(data=>{

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import {transformDataConsultaPalabra} from '../services/api_consultas';
-import {api_consulta_ale,api_consulta_cas } from './../constants/api_url';
-import {api_consulta_ale_Produccion,api_consulta_cas_Produccion} from './../constants/api_url';
+import {transformDataConsultaPalabra,getApi} from '../services/api_consultas';
 import Palabra2 from './Palabra2';
 
  
@@ -52,21 +50,11 @@ class Busca extends Component {
     async buscaPalabra(palabra,idioma){
 
 
-        let strApiAle = api_consulta_ale_Produccion;
-        let strApiCas = api_consulta_cas_Produccion;
-
-        console.log("MLAO::PROCESS=" + process.env.NODE_ENV);
-
-        if(process.env.NODE_ENV==="dev" || process.env.NODE_ENV==="development"){
-            strApiAle = api_consulta_ale;
-            strApiCas = api_consulta_cas;
-        } 
-
-        console.log("MLAO::strApiAle=" + strApiAle);
+    
         
-        let urlBusqueda = strApiAle+palabra;
+        let urlBusqueda = getApi("palabraale","dev") + "/" + palabra;
         if(idioma==="cas"){
-            urlBusqueda = strApiCas+palabra;
+            urlBusqueda = getApi("palabracas","dev") + "/" + palabra;
         }
 
         let palabras = null;
